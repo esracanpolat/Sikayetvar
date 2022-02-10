@@ -7,8 +7,13 @@ const Footer = () => {
             <div style={{ width: "80%", marginBottom: "50px" }}>
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className='d-block align-items-center'><div className='d-flex  align-items-center'><p style={{ color: "#00CDAC", fontSize: "24px" }}>Thank you for supporting us!</p></div>
-                        <div className='d-flex  align-items-center'>Let's get in touch on any of these platforms.</div></div>
-                    <div><Image src="./img/TWITTER.svg" /> <Image src="./img/FACEBOOK.svg" /> <Image src="./img/DRIBBBLE.svg" /><Image src="./img/GITHUB.svg" /></div></div>
+                        <div className='d-flex  align-items-center footer-subtitle'>Let's get in touch on any of these platforms.</div></div>
+                    <div><Image src="./img/TWITTER.svg" className="img-fluid" />
+                        <Image src="./img/FACEBOOK.svg" className="img-fluid" />
+                        <Image src="./img/DRIBBBLE.svg" className="img-fluid" />
+                        <Image src="./img/GITHUB.svg" className="img-fluid" />
+                    </div>
+                </div>
                 <hr />
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className='d-inline-flex'>

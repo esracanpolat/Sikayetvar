@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="contanier">
         <Header />
-        <Image src="./img/BG.svg" style={{ zIndex: "-1" }} />
+        <Image src="./img/BG.svg" style={{ zIndex: "-1", width: "100%" }} />
         <div className="d-flex justify-content-center" style={{ marginTop: "-400px" }}>
           <div className="contanier-content">
             <Routes>

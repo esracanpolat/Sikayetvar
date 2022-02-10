@@ -31,7 +31,7 @@ export default function HomePage() {
                     {fetchList.length > 0 && fetchList.map((x) =>
                     (<><ListGroup.Item style={{ height: 80 }} key={x.id} className="d-flex justify-content-bewtween align-items-center">
                         <div><p style={{ fontWeight: "bold" }}>{x.id}</p></div>
-                        <div ><p style={{ marginLeft: 40 }}>{x.title}</p></div>
+                        <div><p style={{ marginLeft: 40 }}>{x.title}</p></div>
                         <div style={{ position: "absolute", right: 0 }}>
                             <Button className="detail-button" onClick={() => navigate(`/post/${x.id}/users/${x.userId}`)}>Detay</Button>
                             <Button className="edit-button" onClick={() => {

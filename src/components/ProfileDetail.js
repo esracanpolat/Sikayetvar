@@ -55,16 +55,20 @@ const ProfileDetail = () => {
 
                 </div>
                 <div className='col'>
-                    <div style={{ overflow: "hidden", width: 600, height: 300, right: 20, position: "relative", marginTop: 20 }}>
-                        {userInfo && userInfo.address && userInfo.address.geo && userInfo.address.geo.lat && userInfo.address.geo.lng && <Map lat={userInfo && userInfo.address && userInfo.address.geo && Number(userInfo.address.geo.lat)}
-                            lng={userInfo && userInfo.address && userInfo.address.geo && Number(userInfo.address.geo.lng)} />}
+                    <div style={{ overflow: "hidden", marginTop: 20, marginRight: 10 }}>
+                        {userInfo && userInfo.address && userInfo.address.geo && userInfo.address.geo.lat && userInfo.address.geo.lng &&
+                            <Map lat={userInfo && userInfo.address && userInfo.address.geo && Number(userInfo.address.geo.lat)}
+                                lng={userInfo && userInfo.address && userInfo.address.geo && Number(userInfo.address.geo.lng)} />}
                     </div>
                 </div>
 
 
             </div>
-            <hr />
+
             <div className='row h-20'>
+                <div className='d-flex justify-content-center'>
+                    <hr style={{ width: "100%" }} />
+                </div>
                 <p style={{ padding: 60, textAlign: "center" }}>
                     {detailInfo && detailInfo.body}
                 </p>

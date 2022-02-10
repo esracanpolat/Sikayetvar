@@ -74,8 +74,16 @@ color: #8898AA;
   left: 0;
   right: 0;
 }
+.footer-subtitle{
+  font-family: "OpenSans";
+font-size: 22px;
+line-height: 26px;
+text-align: center;
+
+color: #32325D;
+}
 .subTitle{
-  font-family: Open Sans;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -90,6 +98,7 @@ color: #8898AA;
 .subTitle-info{
   font-size: 16px;
 line-height: 26px;
+margin-left: 5px;
 /* or 162% */
 
 letter-spacing: 0.114286px;
