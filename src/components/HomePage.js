@@ -11,7 +11,6 @@ export default function HomePage() {
     const [warningConfirm, setWarningConfirm] = useState(false);
     const [showDetail, setShowDetail] = useState();
     const [showUpdateModal, setShowUpdateModal] = useState(false);
-    const [removeId, setRemoveId] = useState();
 
 
     useEffect(() => {

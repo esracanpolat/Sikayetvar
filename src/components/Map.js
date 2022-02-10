@@ -2,7 +2,7 @@ import React from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 
 const Map = ({ lat, lng }) => {
-    console.log(lat, lng);
+
     return (
         <MapContainer
             style={{ height: "32vh", width: "100%" }}

@@ -26,7 +26,7 @@ const ProfileDetail = () => {
 
 
     }, []);
-    console.log(userInfo, "userInfo:", userInfo && userInfo.address && userInfo.address.geo && Number(userInfo.address.geo.lat), lat);
+
     return (
         <div className='col'>
             <div className='row h-80' >
