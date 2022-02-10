@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
+import { Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 const Footer = () => {
     return (
@@ -8,10 +8,19 @@ const Footer = () => {
                 <div className='d-flex justify-content-between align-items-center'>
                     <div className='d-block align-items-center'><div className='d-flex  align-items-center'><p style={{ color: "#00CDAC", fontSize: "24px" }}>Thank you for supporting us!</p></div>
                         <div className='d-flex  align-items-center footer-subtitle'>Let's get in touch on any of these platforms.</div></div>
-                    <div><Image src="./img/TWITTER.svg" className="img-fluid" />
-                        <Image src="./img/FACEBOOK.svg" className="img-fluid" />
-                        <Image src="./img/DRIBBBLE.svg" className="img-fluid" />
-                        <Image src="./img/GITHUB.svg" className="img-fluid" />
+                    <div>
+                        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Follow us!</Tooltip>}>
+                            <Image src="../img/TWITTER.svg" className="img-fluid" />
+                        </OverlayTrigger>
+                        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">FACEBOOK</Tooltip>}>
+                            <Image src="./img/FACEBOOK.svg" className="img-fluid" />
+                        </OverlayTrigger>
+                        <OverlayTrigger overlay={<Tooltip style={{ marginBottom: 0 }} id="tooltip-disabled">DRIBBBLE</Tooltip>}>
+                            <Image src="./img/DRIBBBLE.svg" className="img-fluid" />
+                        </OverlayTrigger>
+                        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">GITHUB</Tooltip>}>
+                            <Image src="./img/GITHUB.svg" className="img-fluid" />
+                        </OverlayTrigger>
                     </div>
                 </div>
                 <hr />

@@ -13,7 +13,7 @@ function App() {
       <div className="contanier">
         <Header />
         <Image src="./img/BG.svg" style={{ zIndex: "-1", width: "100%" }} />
-        <div className="d-flex justify-content-center" style={{ marginTop: "-400px" }}>
+        <div className="d-flex justify-content-center" style={{ marginTop: "-350px" }}>
           <div className="contanier-content">
             <Routes>
               <Route path="/" element={<HomePage />} />
