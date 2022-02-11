@@ -11,7 +11,7 @@ export default function HomePage() {
     const [warningConfirm, setWarningConfirm] = useState(false);
     const [showDetail, setShowDetail] = useState();
     const [showUpdateModal, setShowUpdateModal] = useState(false);
-
+    const [removeID, setRemoveID] = useState();
 
     useEffect(() => {
         const resp = axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -28,40 +28,38 @@ export default function HomePage() {
             <div style={{ width: "80%" }}>
                 <ListGroup variant="flush" style={{ marginTop: 80 }}>
                     {fetchList.length > 0 && fetchList.map((x) =>
-                    (<><ListGroup.Item style={{ height: 80 }} key={x.id} className="d-flex justify-content-bewtween align-items-center">
+                    (<ListGroup.Item style={{ height: 80 }} key={x.id} className="d-flex justify-content-bewtween align-items-center">
                         <div><p style={{ fontWeight: "bold" }}>{x.id}</p></div>
                         <div><p style={{ marginLeft: 40 }}>{x.title}</p></div>
                         <div style={{ position: "absolute", right: 0 }}>
                             <Button className="detail-button" onClick={() => navigate(`/post/${x.id}/users/${x.userId}`)}>Detay</Button>
                             <Button className="edit-button" onClick={() => {
-
                                 setShowDetail(x); setShowUpdateModal(true);
                             }}>Düzenle</Button>
-                            <Button className="delete-button" onClick={() => setWarningConfirm(true)} variant="danger">Sil</Button></div>
+                            <Button className="delete-button" onClick={() => { setRemoveID(x.id); setWarningConfirm(true) }} variant="danger">Sil</Button></div>
                     </ListGroup.Item>
-                        <Modal show={warningConfirm} onHide={() => setWarningConfirm(false)}>
-                            <Modal.Header >
-                                <Modal.Title>Uyarı</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>Silmek istediğinize eminmisiniz !!!</Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="danger" onClick={() => {
-                                    const newList = fetchList.filter((item) => item.id !== x.id);
-                                    setFetchList(newList);
-                                    setWarningConfirm(false);
-                                }}>
-                                    Sil
-                                </Button>
-                                <Button variant="secondary" onClick={() => setWarningConfirm(false)}>
-                                    Vazgeç
-                                </Button>
-
-                            </Modal.Footer>
-                        </Modal>
-                    </>))}
+                    ))}
                 </ListGroup>
             </div>
+            <Modal show={warningConfirm} onHide={() => setWarningConfirm(false)}>
+                <Modal.Header >
+                    <Modal.Title>Uyarı</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Silmek istediğinize eminmisiniz !!!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="danger" onClick={() => {
+                        const newList = fetchList.filter((item) => item.id !== removeID);
+                        setFetchList(newList);
+                        setWarningConfirm(false);
+                    }}>
+                        Sil
+                    </Button>
+                    <Button variant="secondary" onClick={() => setWarningConfirm(false)}>
+                        Vazgeç
+                    </Button>
 
+                </Modal.Footer>
+            </Modal>
             <Modal
                 show={showUpdateModal}
                 onHide={() => setShowUpdateModal(false)}
